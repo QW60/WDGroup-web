@@ -3,24 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WWWebsolutions</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>WWWebsolutions</title> <!--Title will be changed at a later date-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <link rel="preload stylesheet" href="./style.css">
+    <script src="./scripts/scrolldetect.js" defer></script>
+    <script src="./scripts/startAnimation.js" defer></script>
 </head>
 <body>
+
+    <div id="loadingScreen" class="loadingScreen">
+        <h1 class="notoemoijs">&#128075;</h1>
+    </div>
+
+    <!--This header is the menu of the site-->
     
     <header>
-        <p>WWWebsolutions</p>
+        <img src="./media/images/logo.svg" width="125" alt="Company Logo">
         <ul>
-            <li>Home</li>
-            <li>Work</li>
-            <li>Contact</li>
-            <li>About</li>
+            <a href="#"><li>Home</li></a>
+            <a href="/#work"><li>Work</li></a>
+            <a href="/#contact"><li>Contact</li></a>
+            <a href="/about"><li>About</li></a>
         </ul>
     </header>
 
+    <!--This banner div is the main image of the site and is the first thing a visitor will see-->
+
     <div class="banner">
-        <h1>Welcome to WWWebsolutions</h1>
-        <p>Web Development Studio</p>
+        <h1>Welcome to WWWebsolutions <span class="notoemoijs">&#128075;</span></h1>
+        <p>Web development company from Rotterdam</p>
+        <div id="scrollDownText" class="scrollDown">
+            <hr>
+            <p>scroll down</p>
+            <hr>
+        </div> 
+        <anchor id="work"></anchor>
     </div>
+
+    <div class="ourWork">
+        <h2>What we've worked on. <span class="notoemoijs">&#128640;</span></h2>
+        <p>Here are some of our featured creations.</p>
+        <div class="featuredWork">
+
+            <div class="workItem">
+                <img src="./media/images/placeholder.jpg" alt="placeholder">
+                <h3>Project 1</h3>
+                <p>Project 1 description</p>
+            </div>
+
+            <div class="workItem">
+                <img src="./media/images/placeholder.jpg" alt="placeholder">
+                <h3>Project 2</h3>
+                <p>Project 2 description</p>
+            </div>
+
+            <div class="workItem">
+                <img src="./media/images/placeholder.jpg" alt="placeholder">
+                <h3>Project 3</h3>
+                <p>Project 3 description</p>
+            </div>
+
+        </div>
+
+        <a href="./work"><button>See all our work</button></a>
+
+    </div>
+
+    <div class="contact">
+        <anchor id="contact"></anchor>
+        <h2>Interested? Shoot us a message! <span class="notoemoijs">&#128231;</span></h2>
+        <p class="contactUndertext">Email us at contact@domain.com or use the form below</p>
+
+        <!--Contact form to message directly from the site. To be worked on-->
+
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="footerLinks">
+            <a href="/privacypolicy"><p>Privacy Policy</p></a>
+            <a href="/termsofservice"><p>Terms of Service</p></a>
+        </div>
+        <div class="footerText">
+            <p>&copy; 2024 CompanyName</p>
+        </div>
+    </footer>
+
 </body>
 </html>

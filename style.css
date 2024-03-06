@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); /* Montserrat font from Google Fonts */
 
 * {
     margin: 0;
@@ -11,23 +11,58 @@ body {
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
+    animation: noScroll 4s forwards;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.notoemoijs {
+    font-family: 'Noto Color Emoji', sans-serif;
+}
+
+.loadingScreen {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loadingScreen 4s forwards;
+}
+
+.loadingScreen h1 {
+    color: #ffffff;
+    font-size: 100px;
+    animation: loadingScreenText 4s forwards;
+
 }
 
 header {
     position: sticky;
-    top: 5px;
+    top: 0;
     display: flex;
-    justify-content: space-between;
-    padding: 0px 50px 0px 50px;
+    justify-content: space-around;
     align-items: center;
+    transform: translateY(-100%);
     height: 75px;
-    background-color: #202020;
-    width: 50vw;
-    margin: auto;
-    margin-top: 10px;
+    width: 100vw;
     z-index: 100;
-    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    animation: menuSlideIn 1s forwards;
+    animation-delay: 4s;
+}
+
+header.full-width {
+    background-color: #131313da;
+    backdrop-filter: blur(10px);
     box-shadow: rgba(205, 205, 205, 0.02) 0px 1px 3px 0px, rgba(149, 149, 149, 0.15) 0px 0px 0px 1px;
+    justify-content: space-around;
+    border-radius: 0;
 }
 
 header ul {
@@ -48,9 +83,9 @@ header li:hover {
 }
 
 .banner {
-    position: absolute;
     top: 0;
-    height: 100vh;
+    margin-top: -85px;
+    height: 102vh;
     width: 100%;
     background: url(./media/images/bannerbg.jpg) no-repeat;
     background-size: cover;
@@ -59,4 +94,276 @@ header li:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    text-shadow: 1px 1px 25px #000000;
+}
+
+.scrollDown {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.75);
+    transition: opacity 0.3s ease-in-out;
+    animation: scrollDownJump 8s infinite;
+    animation-delay: 5s;
+}
+
+.scrollDown hr {
+    flex-grow: 1;
+    width: 50px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 10px;
+}
+
+.contact {
+    height: 50vh;
+    width: 100%;
+    background: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.contact form input {
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    width: 250px;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact form input:focus {
+    outline: none;
+    background-color: #1d1d1d;
+}
+
+.contact form textarea {
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    width: 250px;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out;
+    resize: none;
+}
+
+.contact form textarea:focus {
+    outline: none;
+    background-color: #1d1d1d;
+}
+
+.contact form input[type="submit"]:hover {
+    background-color: #1d1d1d;
+    cursor: pointer;
+}
+
+.contactUndertext /* The text underneath the H1 on the banner */ {
+    padding-top: 10px;
+}
+
+svg {
+    background: #F5F5F5;
+}
+
+.ourWork {
+    top: 0;
+    padding: 35px;
+    background: #F5F5F5;
+    color: #1f1f1f;
+    background-size: cover;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.featuredWork {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.featuredWork img {
+    width: 300px;
+    border-radius: 10px;
+    border-radius: 10px;
+    outline: 2px solid #3a3a3a5b;
+    transition: all 0.3s ease-in-out;
+}
+
+.featuredWork h3 {
+    padding-top: 20px;
+}
+
+.ourWork button {
+    padding: 12.5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.ourWork button:hover {
+    background-color: #1d1d1d;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.footerText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footerLinks {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footerLinks a {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.footerLinks a:hover {
+    color: #a1a1a1;
+}
+
+
+/* Keyframes for animations */
+
+@keyframes scrollDownJump {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(10px);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadingScreen {
+    0% {
+            opacity: 1;
+            display: flex;
+    }
+
+    85% {
+            opacity: 1;
+    }
+
+    100% {
+            opacity: 0;
+            display: none;
+    }
+}
+
+@keyframes loadingScreenText {
+    0% {
+        opacity: 1;
+        scale: 0;
+    }
+
+    10% {
+        scale: 1;
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(-15deg);
+    }
+
+    40% {
+        transform: rotate(0deg);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes noScroll {
+    0% {
+        overflow: hidden;
+    }
+
+    99% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow: auto;
+    }
+    
+}
+
+@keyframes menuSlideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+    
 }
